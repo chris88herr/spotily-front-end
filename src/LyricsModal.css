@@ -1,0 +1,50 @@
+.lyrics_modal{
+    position:fixed;
+    margin-top: 5%;
+    margin-left: 60%;
+    
+    padding-bottom: 20px ;
+    width: 45%;
+    max-width: 600px;
+    height: 70%;
+    background-color: rgba(0, 55, 80, 0.9);
+    overflow-y: scroll;
+    z-index: 2;
+    border-radius: 5%;
+    color: white;
+    
+}
+.lyrics_modal::-webkit-scrollbar{
+    display: none;
+}
+
+.display-block {
+    display: block;
+    transform:scale(1);
+    transition: ease-in .15s;
+  }
+  
+  .display-none {
+    /* display: none; */
+    transform: scale(0.0);
+    transition: ease-out .15s;
+  }
+  .lyrics{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .lyrics button{
+      position:absolute;
+      right: 0;
+  }
+  .lyrics_title{
+      margin: 20px 10px;
+      font-size: 1.5em;
+      color:rgb(110, 142, 231);
+  }
+  .lyrics_modal_lyircs p {
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      padding: 0px 55px
+  }

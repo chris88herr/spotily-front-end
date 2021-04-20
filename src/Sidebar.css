@@ -1,0 +1,62 @@
+.sidebar {
+    border:1px solid black;
+    height:92vh;
+    flex:0.2;
+    background-color: #040404;
+    color: white;
+    min-width: 200px;
+    flex: 1;
+    max-width: 300px;
+    /* width: 30%; */
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-y: overlay;
+    
+}
+
+.sidebar::-webkit-scrollbar{
+    display: none;
+}
+
+.sidebar_logo{
+    margin-right: auto;
+    height:80px;
+    object-fit: contain;
+
+}
+
+.sidebar_title{
+    margin-left: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.sidebar_playlists{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+
+}
+
+
+.sidebar_playlists img{
+    width: 60px;
+    object-fit: contain;
+}
+
+.sidebar_single_playlist{
+    margin:10px;
+}
+.sidebar_single_playlist:hover{
+    transform: scale(1.1);
+    transition:linear .1s;
+    cursor: pointer;
+}
+.sidebar_single_playlist_selected img {
+    border: 3px solid rgb(1, 233, 125);
+    margin:7px;
+   
+    /* transition: linear .1s; */
+
+
+}

@@ -1,0 +1,45 @@
+.song_row{
+    /* margin-left: 20px; */
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: ease-out .5s;
+    width: 15%;
+}
+
+.song_row:hover{
+    cursor : pointer;
+    opacity: 0.8;
+    filter: drop-shadow(3mm 2mm 2mm rgb(110, 195, 117));
+    transition: ease-in .2s;
+}
+
+.song_info{
+    margin-left: 20px;
+}
+.song_info h1 {
+    font-size :  16px;
+}
+.song_info p {
+    font-size: 14px;
+    margin-top: 3px;
+    color: rgb(212, 212, 212);
+}
+.song_album{
+    height: 40px;
+    width: 40px;
+}
+.selected {
+    background-color: rgb(3, 3, 3, 0.9);;
+    opacity: .9;
+    z-index: 1;
+    filter: drop-shadow(3mm 2mm 2mm rgb(110, 182, 195));
+
+}
+.selected:hover {
+    background-color: rgb(3, 3, 3, 1.9);;
+    opacity: .9;
+    z-index: 1;
+    filter: drop-shadow(3mm 2mm 2mm rgb(110, 182, 195));
+}
