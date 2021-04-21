@@ -2,7 +2,7 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
 //redirect to our app home page once authorized
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'https://spotily-app-front-end.herokuapp.com/';
 
 //spotify api client id
 console.log(process.env)
