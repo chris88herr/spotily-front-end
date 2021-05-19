@@ -7,7 +7,7 @@
     height: 87vh;
     color:white;
     overflow-y: overlay;
-    background: linear-gradient( rgb(75, 174, 219) , rgb(32, 32, 32));
+    background: rgb(0, 0, 0)
 }
 
 .body::-webkit-scrollbar{

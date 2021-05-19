@@ -54,7 +54,6 @@ function App() {
 
     // Ready
     player.addListener('ready', ({ device_id }) => {
-      console.log('Ready with Device ID', device_id);
       dispatch({
         type: "SET_PLAYER_ID",
         player_id : device_id,
@@ -92,7 +91,6 @@ function App() {
 
       });
       getUserPlaylistsHandler(_token).then(playlists => {
-        console.log(playlists)
         dispatch ({
           type:"SET_PLAYLISTS",
           playlists: playlists,
@@ -128,7 +126,9 @@ function App() {
                     
                     <Route exact path = "/" render={(props)=>(
                       <PlayerBody/>)}/>  
-                    <Route path ="search" component={Search}/>
+                    <Route path ="/search">
+                      <Search/>
+                    </Route>
 
                      <Footer showModalFunc = {toggleModal}/>
                   </MainScreen>

@@ -1,15 +1,16 @@
 .footer{
     /* border: 1px solid green; */
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
     height : 4vh;
-    width: 100%;
-    background-color: #282828;
+    width: 98%;
+    background-color: #000000;
     justify-content: space-between;
     color: white;
     display: flex;
     padding: 20px;
     align-items: center;
+
 }
 
 .footer_left {
@@ -54,7 +55,7 @@
 }
 
 .footer_green{
-    color: green;
+    color: rgba(221, 120, 4);
 }
 
 .footer_green:hover{
@@ -63,7 +64,7 @@
 }
 
 .footer_right * .MuiSlider-root{
-    color:green;
+    color:rgba(221, 120, 4);
     display: flex;
 }
 .footer_center *:hover{

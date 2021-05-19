@@ -8,8 +8,7 @@ export default function SongRow({selected, track, selectFunc}) {
             <img className="song_album" src={track.album.images[0].url} alt=""/>
             <div className="song_info">
                 <h1>{track.name}</h1>
-                <p>{track?.artists.map(artist => artist.name).join(", ")}
-                    {/* {track?.album?.name}     */}
+                <p>{track?.artists.slice(0,1).map(artist => artist.name).join(", ")}
                 </p>
             </div>
 

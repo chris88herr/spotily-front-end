@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Body.css";
-import Header from "./Header";
-import SongRow from "./SongRow";
+import SongsBody from './SongsBody'
 import ArtistsContainer from "./ArtistsContainer";
 import { useDataLayerValue } from "./DataLayer";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
-import FavoritedIcon from "@material-ui/icons/Favorite";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+
 import axios from "axios";
 
 const getArtistInfo = (artistUrl, token) => {
@@ -42,14 +40,14 @@ export default function PlayerBody() {
     }}).then(res => res.json())
   }
   const handleArtistSelected = (artist)=>{
-    if(artist===artist_filter)
+    if(artist?.name===artist_filter)
         dispatch({
             type: "SET_ARTIST_FILTER",
             artist_filter:""
         })
     else  dispatch({
         type: "SET_ARTIST_FILTER",
-        artist_filter:artist
+        artist_filter:artist?.name
     })
   }
 
@@ -58,6 +56,7 @@ export default function PlayerBody() {
     dispatch({
       type: "SELECT_TRACK",
       track: trackObj,
+      isPlaying: true
     });
     startPlaylist(current_playlist, index);
   };
@@ -79,11 +78,6 @@ export default function PlayerBody() {
       .then(() => {
         spotify_player.setVolume(volume);
         spotify_player.resume();
-        dispatch({
-          type: "SELECT_TRACK",
-          track: current_playlist?.tracks?.items[index],
-          isPlaying:true
-        });
       })
       .catch((e) => console.log("error" + e));
   };
@@ -113,48 +107,24 @@ export default function PlayerBody() {
 
   return (
     <div className="body">
-      {/* s<Header /> */}
       <div className="body_info">
         <img src={current_playlist?.images[0]?.url} alt="" />
         <div className="body__infoText">
           <strong>PLAYLIST</strong>
           <h2>{current_playlist?.name}</h2>
-          <p>{current_playlist?.description}</p>
           <div className="body_icons">
           <PlayCircleFilledIcon
             className="body_sh"
             onClick={() => startPlaylist(current_playlist)}
           />
         </div>
-        </div>
-
       </div>
+    </div>
+      <ArtistsContainer artists={artistsFromPlaylist} handleArtistSelection={handleArtistSelected} >
+        <h1>Artists on this playlist</h1>
+      </ArtistsContainer>
 
-      <ArtistsContainer artists={artistsFromPlaylist} handleArtistSelection={handleArtistSelected} />
-
-      <div className="body_songs">
-        {current_playlist?.tracks?.items?.map((item) => {            
-          if (trackSelected === item) {
-            return (
-              <SongRow
-                selected
-                key={current_playlist?.tracks?.items?.indexOf(item)}
-                track={item.track}
-              />
-            );
-          } else {
-              if(artist_filter.length==0 || item?.track?.artists[0]?.name?.includes(artist_filter)){
-            return (
-              <SongRow
-                key={current_playlist?.tracks?.items?.indexOf(item)}
-                track={item.track}
-                selectFunc={() => selectTrack(item)}
-              />
-            
-            )};
-          }
-        })}
-      </div>
+      <SongsBody data = {current_playlist} selectTrack = {selectTrack}></SongsBody>
     </div>
   );
 }

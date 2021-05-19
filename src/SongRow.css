@@ -9,9 +9,10 @@
 }
 
 .song_row:hover{
+    background-color: rgba(0,0,0,0);
     cursor : pointer;
     opacity: 0.8;
-    filter: drop-shadow(3mm 2mm 2mm rgb(110, 195, 117));
+    filter: drop-shadow(3mm 2mm 2mm rgba(221, 120, 4));
     transition: ease-in .2s;
 }
 
@@ -30,16 +31,16 @@
     height: 40px;
     width: 40px;
 }
-.selected {
-    background-color: rgb(3, 3, 3, 0.9);;
+.selected{
+    background-color: rgb(3, 3, 3, 0);;
     opacity: .9;
     z-index: 1;
-    filter: drop-shadow(3mm 2mm 2mm rgb(110, 182, 195));
+    filter: drop-shadow(3mm 2mm 2mm rgba(221, 120, 4));
 
 }
 .selected:hover {
-    background-color: rgb(3, 3, 3, 1.9);;
+    background-color: rgb(3, 3, 3, 0);;
     opacity: .9;
     z-index: 1;
-    filter: drop-shadow(3mm 2mm 2mm rgb(110, 182, 195));
+    filter: drop-shadow(3mm 2mm 2mm rgb(212, 158, 95));
 }

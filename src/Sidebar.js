@@ -8,7 +8,7 @@ import { useDataLayerValue } from './DataLayer';
 import SpotifyWebApi from 'spotify-web-api-js';
 import {Link} from 'react-router-dom';
 import SidebarPlaylist from './SidebarPlaylist';
-import ArtistsContainer from './ArtistsContainer';
+import logo from './images/spotilyLogo.png'
 
 export default function Sidebar() {
     const [{playlists}, dispatch] = useDataLayerValue();
@@ -29,14 +29,14 @@ export default function Sidebar() {
     return (
         <div className="sidebar">
             <img className ="sidebar_logo"
-            src ="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg" alt=""></img>
+            src ={logo} alt=""></img>
             <Link to= "/">
             <SidebarOption key='home' Icon={HomeIcon} title="Home"/>
             </Link>
-            {/* <Link to ="/search">
+            <Link to ="/search">
             <SidebarOption key='search' Icon={SearchIcon} title="Search"/>
             </Link>
-            <SidebarOption key='library' Icon={LibraryMusicIcon} title="Your Library"/> */}
+            {/* <SidebarOption key='library' Icon={LibraryMusicIcon} title="Your Library"/> */}
             <br/>
             <strong className="sidebar_title">PLAYLISTS</strong>
             <hr/>

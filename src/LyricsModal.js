@@ -20,13 +20,15 @@ export default function LyricsModal({showModal, hideFunc}) {
     const [{trackSelected},  dispatch] = useDataLayerValue();
     const [songLyrics, setLyrics] = useState("No Lyircs")
     const [isLoading, setLoading] = useState(false);
-    const lyricsBaseUrl  = new URL("https://spotilyrics-app.herokuapp.com/songLyrics");
+    console.log(process.env.REACT_APP_LYRICS_URL)
+    const lyricsBaseUrl  = new URL(process.env.REACT_APP_LYRICS_URL);
     const classes = useStyles();
 
     useEffect(()=>{
         if(trackSelected){
-        const songName = trackSelected?.track?.name;
-        const songArtist = trackSelected?.track?.artists[0]?.name;
+        console.log(trackSelected)
+        const songName = trackSelected?.track ? trackSelected.track.name : trackSelected.name;
+        const songArtist = trackSelected?.track ? trackSelected.track.artists[0]?.name : trackSelected.artists[0]?.name;
         lyricsBaseUrl.searchParams.append("artist", songArtist);
         lyricsBaseUrl.searchParams.append("songName",songName);
         setLoading(true)
@@ -43,7 +45,8 @@ export default function LyricsModal({showModal, hideFunc}) {
             setLoading(false)
         })
         .catch(e=>{setLyrics("No Lyrics")
-            setLoading(false)
+
+        setLoading(false)
     });
         }
     }, [trackSelected])

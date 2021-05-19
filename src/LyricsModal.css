@@ -1,13 +1,11 @@
 .lyrics_modal{
     position:fixed;
-    margin-top: 5%;
-    margin-left: 60%;
-    
+
+    margin-left: 350px;
     padding-bottom: 20px ;
-    width: 45%;
-    max-width: 600px;
-    height: 70%;
-    background-color: rgba(0, 55, 80, 0.9);
+    width: 100vh;
+    height: 90vh;
+    background-color: rgba(32, 32, 32, 0.99);
     overflow-y: scroll;
     z-index: 2;
     border-radius: 5%;
@@ -41,7 +39,7 @@
   .lyrics_title{
       margin: 20px 10px;
       font-size: 1.5em;
-      color:rgb(110, 142, 231);
+      color:rgba(221, 120, 4);
   }
   .lyrics_modal_lyircs p {
       margin-bottom: 20px;

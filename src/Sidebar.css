@@ -1,8 +1,8 @@
 .sidebar {
-    border:1px solid black;
+    border:1px solid rgb(0, 0, 0);
     height:92vh;
     flex:0.2;
-    background-color: #040404;
+    background: linear-gradient(320deg, rgb(0, 0, 0) 95% , rgba(221, 120, 4) );
     color: white;
     min-width: 200px;
     flex: 1;
@@ -11,6 +11,7 @@
     padding-left: 10px;
     padding-right: 10px;
     overflow-y: overlay;
+
     
 }
 
@@ -19,9 +20,12 @@
 }
 
 .sidebar_logo{
-    margin-right: auto;
-    height:80px;
-    object-fit: contain;
+    /* margin-right: auto; */
+    height:100px;
+    width:100px;
+    object-fit:contain;
+    left: -50%;
+    transform: translateX(50%);
 
 }
 
@@ -53,7 +57,7 @@
     cursor: pointer;
 }
 .sidebar_single_playlist_selected img {
-    border: 3px solid rgb(1, 233, 125);
+    border: 3px solid rgba(221, 120, 4);
     margin:7px;
    
     /* transition: linear .1s; */

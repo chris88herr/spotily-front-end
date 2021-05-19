@@ -23,8 +23,8 @@
 
 }
 .single_artist_container:hover{
-    transform: scale(1.1);
-    filter: drop-shadow(2mm 2mm 2mm rgb(22, 172, 192));
+    transform: scale(1.05);
+    filter: drop-shadow(1mm 2mm 2mm rgba(221, 120, 4));
     transition: ease-in .1s
     
 
@@ -37,7 +37,7 @@
     border-radius: 60%;
     margin-top: 0x;
     position:relative;
-    filter: drop-shadow(3mm 2mm 2mm rgb(75, 110, 192))
+    /* filter: drop-shadow(2mm 2mm 2mm rgb(255, 255, 255)) */
 }
 
 .single_artist_container p {

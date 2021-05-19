@@ -51,18 +51,19 @@ export default function Footer({showModalFunc}) {
         }
     }
 
-const setNextTrack = () => {
-    const track = current_playlist?.tracks?.items?.find(item => item.track.name === trackSelected?.track.name);
-    const index = current_playlist?.tracks?.items?.indexOf(track);
-    if(index < current_playlist?.tracks?.items?.length-1) {
-        const trackToSelect = current_playlist?.tracks?.items[index+1]
-        dispatch({
-            type:"SELECT_TRACK",
-            track: trackToSelect
-        })
-        spotify_player.nextTrack();        
+    const setNextTrack = () => {
+        const track = current_playlist?.tracks?.items?.find(item => item.track.name === trackSelected?.track.name);
+        const index = current_playlist?.tracks?.items?.indexOf(track);
+        if(index < current_playlist?.tracks?.items?.length-1) {
+            const trackToSelect = current_playlist?.tracks?.items[index+1]
+            dispatch({
+                type:"SELECT_TRACK",
+                track: trackToSelect
+            })
+            spotify_player.nextTrack();        
+            }
         }
-    }
+        
 
     return (
         <div className="footer">
