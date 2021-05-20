@@ -63,33 +63,33 @@ export default function Footer({showModalFunc}) {
             spotify_player.nextTrack();        
             }
         }
-        
+    const inconCss = {color:"rgba(221, 120, 4, 0.6)"}
 
     return (
         <div className="footer">
         <div className="footer_left">
             <img className="album_logo" src={trackSelected?.track?.album?.images[2]?.url} alt=""></img>
-            <div className="footer_left_song_info">
+            <div className="footer_left_song_info" >
                 <h4>{trackSelected?.track?.name}</h4>
                 <p>{trackSelected?.track?.artists[0]?.name }</p>
             </div>
         </div> 
         <div className="footer_center">
             {console.log(isPlaying)}
-            <SkipPreviousIcon className ="skip_prev" onClick={()=>setPrevTrack()}/>
-            {!isPlaying ? <PlayIcon fontSize = "large" className ="footer_green play" onClick={()=>resumePlayBack()}/>
-            : <PauseCircleFilledIcon fontSize="large" onClick={()=>pausePlayBack()}/>}
+            <SkipPreviousIcon className ="skip_prev" style={inconCss} onClick={()=>setPrevTrack()}/>
+            {!isPlaying ? <PlayIcon fontSize = "large" style={inconCss} className ="footer_green play" onClick={()=>resumePlayBack()}/>
+            : <PauseCircleFilledIcon fontSize="large" style={inconCss} onClick={()=>pausePlayBack()}/>}
 
-            <SkipIcon className ="skip_next" onClick={()=>setNextTrack()}/>
+            <SkipIcon className ="skip_next" style={inconCss} onClick={()=>setNextTrack()}/>
             <div  onClick={()=>showModalFunc()}>
-            <MusicNote/>
+            <MusicNote style={inconCss}/>
             </div>
         </div> 
             <div className="footer_right">
                 <Grid container spacing={2}>
 
                 <Grid item>
-                    <VolumeDownIcon />
+                    <VolumeDownIcon style={inconCss} />
                 </Grid>
                 <Grid item xs>
                     <Slider value={volume*100} onChange={(e, val)=>setVolume(val)}  />

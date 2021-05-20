@@ -19,7 +19,11 @@
     min-width: 100px;
     display: inline-flex;
 }
-.footer_left p, h4 {
+.footer_left  h4 {
+    margin-left: 20px;
+    color:rgba(221, 120, 4)
+}
+.footer_left  p {
     margin-left: 20px;
 }
 

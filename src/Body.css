@@ -61,4 +61,7 @@
     margin: 10px 0px;
     display: flex;
     flex-wrap: wrap;
+    background-color: rgb(8, 8, 8);
+    border-radius: 30px;
+    width: 98%;
 }

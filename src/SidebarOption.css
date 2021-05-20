@@ -3,7 +3,7 @@
     color:rgb(202, 202, 202);
     height: 40px;
     cursor:pointer;
-    transition: 50ms color ease-in
+    transition: 50ms color ease-in;
 }
 
 .sidebar hr {
@@ -12,7 +12,7 @@
     margin: 10px auto;
 }
 .sidebarOption:hover{
-    color: rgb(233, 135, 135);
+    color: rgb(248, 132, 0);
 }
 
 .sidebar_icon{
@@ -24,4 +24,12 @@
     margin-top: 10px;
     margin-left: 20px;
     font-size: 14px;
+}
+
+.sidebarOption_selected {
+    display: flex;
+    color:rgb(202, 202, 202);
+    height: 40px;
+    cursor:pointer;
+    color : rgb(246, 167, 76)
 }

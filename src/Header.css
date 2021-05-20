@@ -10,8 +10,8 @@
 
 .header_left{
     flex: .5;
-    background-color: white;
-    color: gray;
+    background-color: rgba(14, 14, 14, 0.6);
+    color: rgb(255, 255, 255);
     border-radius: 30px;
     display: flex;
     align-items: center ;
@@ -22,10 +22,19 @@
 .header_left input {
     border:none;
     width: 80%;
+    background-color: rgba(14, 13, 13, 0);
+    color:rgb(211, 130, 0);
+    font-size: x-large;
+    
+}
+
+.header_left input::placeholder{
+    color:rgb(211, 130, 0)
 }
 
 .header_right h4 {
     margin-left: 10px;
+    color: rgba(221, 120, 4, 0.6);
     
 }
 

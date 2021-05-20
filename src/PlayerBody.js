@@ -52,6 +52,7 @@ export default function PlayerBody() {
   }
 
   const selectTrack = (trackObj) => {
+    console.log(trackObj)
     const index = current_playlist?.tracks?.items?.indexOf(trackObj);
     dispatch({
       type: "SELECT_TRACK",

@@ -76,9 +76,12 @@ export default function Search() {
     const [tracks, setTracks] = useState([])
     const [artistsTracks, setArtistsTracks] = useState([])
     const selectTrack = (trackObj) => {
+        const tracksTranformed = {
+            track:trackObj
+        }
         dispatch({
           type: "SELECT_TRACK",
-          track: trackObj,
+          track: tracksTranformed,
           isPlaying: true
         });
         startSongPlayback(trackObj, token, player_id, spotify_player, volume);
@@ -127,17 +130,13 @@ export default function Search() {
                 Authorization : `Bearer ${token}`
             },
         } ).then(res => res.json()).then(track => {
-            // console.log(track?.album?.name)
             return track
         })
 
     }
 
-    
-
     useEffect(()=>{
         if (query.length>0){
-            console.log("running")
             const results = searchQueryHandler(query, token);
             setArtistsAndTracks(results, setArtists, setTracks)
         }
